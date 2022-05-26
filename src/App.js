@@ -1,38 +1,28 @@
-import logo from './logo.svg';
 import './App.css';
-import React, {useState} from 'react';
+import {BrowserRouter, Routes, Route} from 'react-router-dom' 
+import getClientes from './lista_clientes';
+
+
 function App() {
-  const[iniciar, sumar] = useState(0);
-  const suma = () =>{
-    try {
-      sumar(iniciar+1)
-    } catch (error) {
-      console.log(error);
-    }
+  return (
+    <BrowserRouter>
+     <Routes>
+      <Route path="/" component={getClientes} exact />
+     </Routes>
+    </BrowserRouter>
+  );
+}
 
-  }
-  const resta =() =>{
-    try {
-      sumar(iniciar-1)
-    } catch (error) {
-      console.log(error);
-    }
-  }
+export default App;
 
+/*function App() {
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Hernandez Sandoval Mario
+          Edit <code>src/App.js</code> and save to reload.
         </p>
-        <p>
-          Contador: {iniciar}
-        </p>
-        <button onClick={suma}>Sumar</button>
-        <br></br>
-        <button onClick={resta}>Restar</button>
-        <br></br>
         <a
           className="App-link"
           href="https://reactjs.org"
@@ -46,4 +36,4 @@ function App() {
   );
 }
 
-export default App;
+export default App;*/
